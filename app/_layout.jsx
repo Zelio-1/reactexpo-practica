@@ -20,6 +20,7 @@ const RootLayout = () => {
   >
 
     <Stack.Screen name="screen" options ={{title: 'Home'}} /*Esto es el titulo del menu*/ />
+    <Stack.Screen name="notes" options ={{headerTitle: 'Notes'}} /*Esto es el titulo de notes*/ />
   </Stack>;
 }
 
