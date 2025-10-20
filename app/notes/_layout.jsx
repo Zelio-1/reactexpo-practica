@@ -7,9 +7,8 @@ const NoteLayout = ()=>{
                 headerShown: false //Que no muestre otro menu. Unicamente aparece el del index.jsx
             }}    
 
-        >
+        />
 
-        </Stack>
     )
 }
 

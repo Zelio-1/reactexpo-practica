@@ -1,18 +1,21 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity} from "react-native";
-import artorias from '@/assets/images/artorias.png';
-import { UseRouter } from 'expo-router'; //Para hacer un hook.
+import postit from '@/assets/images/postit.jpg'
+import { useRouter } from 'expo-router'; //Para hacer un hook.
 //Stylesheet: Hace posible poner los estilos hasat abajo
 const HomeScreen = () =>{
   
-  const router = UseRouter();
+  const router = useRouter()
 
   return (
     <View style = {styles.container} /*Esto es lo primero que se hace para empezar a poner los componenetes necesarios. Los
     componentes necesitan importar. Los estilos usan doble llave*/> 
-      <Image source={artorias} style ={styles.Image}/>
-      <Text style={styles.titulo}>Chilaquiles con doritos</Text>
+      <Image source={postit} style ={styles.Image}/>
+      <Text style={styles.titulo}>Las notas</Text>
       <Text style={styles.subtitulo}>Captura tus notas en cualquier lugar y momento</Text>
-      <TouchableOpacity style={styles.btn} onPress={()=>router.push('./notes')}>
+      <TouchableOpacity 
+        style={styles.btn} 
+        onPress={()=>router.push('./notes')}
+      >
         <Text style={{color: '#fff', fontWeight: 'bold'}}>Iniciar</Text>
       </TouchableOpacity>
     </View>
