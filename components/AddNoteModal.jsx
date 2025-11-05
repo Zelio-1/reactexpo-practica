@@ -1,6 +1,13 @@
-import {StyleSheet, Text, View, TouchableOpacity, Modal, TextInput} from 'react-native'
+import {Modal, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
 
-const AddNoteModal = ({modalVisible, setModalVisible, newNote, setNewNote, addNewNote}) => {
+
+const AddNoteModal = ({
+    modalVisible,
+    setModalVisible,
+    newNote,
+    setNewNote,
+    addNewNote
+}) => {
   return (
     <Modal
         visible={modalVisible}
@@ -20,21 +27,21 @@ const AddNoteModal = ({modalVisible, setModalVisible, newNote, setNewNote, addNe
               value={newNote}
               onChangeText={setNewNote}
             />
-            <View style={styles.modalBtns}>
-              {/* Boton Cancelar */}
+            <View style={styles.modalButtons}>
+              {/*Boton Cancelar*/}
               <TouchableOpacity 
-                style={styles.cancelBtn}
+                style={styles.cancelButton}
                 onPress={()=>setModalVisible(false)}
               >
-                <Text style={styles.cancelBtnTxt}>Cancelar</Text>
+                <Text style={styles.cancelButtonText}>Cancelar</Text>
               </TouchableOpacity>
 
-              {/* Boton Aceptar */}
+              {/*Boton Aceptar*/}
               <TouchableOpacity 
-                style={styles.saveBtn}
+                style={styles.saveButton}
                 onPress={addNewNote}
               >
-                <Text style={styles.saveBtnTxt}>Agregar</Text>
+                <Text style={styles.saveButtonText}>Agregar</Text>
               </TouchableOpacity>
 
             </View>
@@ -47,55 +54,57 @@ const AddNoteModal = ({modalVisible, setModalVisible, newNote, setNewNote, addNe
 export default AddNoteModal
 
 const styles = StyleSheet.create({
-    cancelBtn: {
-      backgroundColor: '#ccc',
-      padding: 10,
-      borderRadius: 5,
-      flex: 1,
-      margin: '10px', 
-      marginRight: 10,
-      alignItems: 'center'      
-    },
-    cancelBtnTxt:{
-      fontSize: 16,
-      color: '#333'
-    },
-    saveBtn: {
-      backgroundColor: '#007bff',
-      padding: 10,
-      borderRadius:5,
-      flex:1,
-      margin: '10px', 
-      marginRight:10,
-      alignItems: 'center'
-    },
-    saveBtnTxt: {
-      fontSize:16,
-      color:'#fff'
-    },
     modalOverlay: {
-      flex: 1, 
-      backgroundColor: 'rgba(0,0,0,0,5)',
+      flex: 1,
+      backgroundColor: '#333',
       justifyContent: 'center',
       alignItems:'center'
     },
-    modalContent:{
-      backgroundColor:'#fff',
-      padding: 20, 
-      borderRadius: 10, 
+    modalContent: {
+      backgroundColor: '#fff',
+      padding:20,
+      borderRadius: 10,
       width: '80%'
-    }, 
+    },
+    modalTitle:{
+      fontWeight:'bold',
+      marginBottom:10,
+      textAlign:'center',
+      fontSize:20
+    },
     input: {
       borderWidth:1,
       borderRadius:8,
       padding:10,
       fontSize:16,
       marginBottom:15
-    }, 
-    modalTitle:{
-      fontWeight:'bold',
-      marginBottom:10,
-      textAlign:'center',
-      fontSize:20
-    }
+    },
+    modalButtons: {
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    },
+    cancelButton: {
+      backgroundColor: '#ccc',
+      padding: 10,
+      borderRadius:5,
+      flex:1,
+      marginRight:10,
+      alignItems: 'center'
+    },
+    cancelButtonText: {
+      fontSize:16,
+      color:'#00000000'
+    },
+     saveButton: {
+      backgroundColor: '#007bff',
+      padding: 10,
+      borderRadius:5,
+      flex:1,
+      marginRight:10,
+      alignItems: 'center'
+    },
+    saveButtonText: {
+      fontSize:16,
+      color:'#fff'
+    },
 })
